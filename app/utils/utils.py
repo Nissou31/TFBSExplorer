@@ -1,7 +1,6 @@
 from Bio import SeqIO, Entrez
 import requests
 import os
-import oci
 
 dbfrom = "nucleotide"
 db = "gene"

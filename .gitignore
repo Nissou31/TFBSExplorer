@@ -1,0 +1,39 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore virtual environment
+venv/
+env/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore cache directories
+__pycache__/
+**/__pycache__/
+
+# Ignore editor specific files
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore package build directories
+dist/
+build/
+
+# Ignore database files
+*.db
+
+# Ignore compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore backup files
+*.bak
+*.swp
+*.swo
+create_repo.sh

@@ -1,6 +1,13 @@
 # Use the official Python image from the Docker Hub
 FROM python:3.9-slim
 
+# Labels for image metadata
+LABEL maintainer="Anes AMRI <anes.devops.31@gmail.com>" \
+    name="TFBS Explorer" \
+    description="This project identifies cis-regulating TFBS of a set of genes using Biopython and FastAPI, with integration to NCBI and JASPAR databases." \
+    version="1.0.0"
+
+
 # Set environment variables to ensure that the Python output is sent straight to the terminal without buffering
 ENV PYTHONUNBUFFERED 1
 

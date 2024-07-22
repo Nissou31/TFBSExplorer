@@ -24,11 +24,11 @@ jobs:
 
       - name: Extract Docker image version
         id: version
-        run: echo "VERSION=$(grep 'version=' Dockerfile | head -1 | sed 's/.*\"\(.*\)\".*/\1/')" >> $GITHUB_ENV
+        run: echo "::set-output name=VERSION::$(grep 'version=' Dockerfile | head -1 | sed 's/.*\"\(.*\)\".*/\1/')"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/TFBSExplorer:${{ env.VERSION }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/tfbs-explorer:${{ steps.version.outputs.VERSION }}
           context: .

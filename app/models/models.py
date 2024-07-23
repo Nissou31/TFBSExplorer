@@ -1,15 +1,15 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import List, Optional
 
 
 class TFBSRequest(BaseModel):
-    email: str
+    email: EmailStr
     t: float
-    l: Optional[int] = 1000
-    w: Optional[int] = 40
     m: str
     s: float
-    p: Optional[float] = 0.0
+    promoter_length: int
+    window_size: int
+    pseudocount: float
     mrna: List[str]
 
 

@@ -22,10 +22,10 @@ def get_tfbs(request: TFBSRequest):
         tf_name, wsi = search_luncher(
             request.mrna,
             request.m,
-            request.p,
+            request.promoter_length,
             request.t,
-            request.l,
-            request.w,
+            request.pseudocount,
+            request.window_size,
             request.s,
         )
 
@@ -35,10 +35,10 @@ def get_tfbs(request: TFBSRequest):
                 "parameters": {
                     "motif": request.m,
                     "threshold": request.t,
-                    "promoter_length": request.l,
-                    "window_size": request.w,
+                    "promoter_length": request.promoter_length,
+                    "window_size": request.window_size,
                     "window_threshold": request.s,
-                    "pseudocount": request.p,
+                    "pseudocount": request.pseudocount,
                     "mrna": request.mrna,
                 },
             }
